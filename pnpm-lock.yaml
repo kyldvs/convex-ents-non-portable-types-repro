@@ -100,14 +100,14 @@ importers:
   packages/backend:
     dependencies:
       convex:
-        specifier: ^1.8.0
-        version: 1.9.0(@clerk/clerk-react@4.30.5)(react-dom@18.2.0)(react@18.2.0)
+        specifier: ^1.11.0
+        version: 1.11.0
       convex-ents:
         specifier: ^0.4.2
-        version: 0.4.2(convex@1.9.0)
+        version: 0.4.2(convex@1.11.0)
       convex-helpers:
-        specifier: ^0.1.19
-        version: 0.1.19(convex@1.9.0)
+        specifier: ^0.1.27
+        version: 0.1.27(convex@1.11.0)
       openai:
         specifier: ^4.24.7
         version: 4.28.0
@@ -1831,27 +1831,57 @@ packages:
     resolution: {integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==}
     dev: true
 
-  /convex-ents@0.4.2(convex@1.9.0):
+  /convex-ents@0.4.2(convex@1.11.0):
     resolution: {integrity: sha512-dQ9TgQn1jMfU7I9JwAmNHFV5AOBr/YhJ/RXlQMJXMVTUKCJGhfTccsMqxBsS4dceX8rDJaZydiqrMV4ExhDeWw==}
     peerDependencies:
       convex: ^1.8.0
     dependencies:
-      convex: 1.9.0(@clerk/clerk-react@4.30.5)(react-dom@18.2.0)(react@18.2.0)
+      convex: 1.11.0
     dev: false
 
-  /convex-helpers@0.1.19(convex@1.9.0):
-    resolution: {integrity: sha512-Xz2f/O+aLLBSVMPxMaeBpqjEVRgki+yS3l7Nm/1LTvBDDD5pR7cF1radedEQt8uKKGgzIQ3C0hLO+UVQpoNfhA==}
+  /convex-helpers@0.1.27(convex@1.11.0):
+    resolution: {integrity: sha512-Oc3xluBNd+rxy+Lok/X9QjaYmJddAZyMbOSE5OsFWsOulGqOp99PYAnngAYA0T/1Uw/D4j1bet2ql+nZLMtICg==}
     peerDependencies:
-      convex: ^1.8.0
+      convex: ^1.10.0
+      hono: ^4.0.5
       react: ^17.0.2 || ^18.0.0
       zod: ^3.22.4
     peerDependenciesMeta:
+      hono:
+        optional: true
       react:
         optional: true
       zod:
         optional: true
     dependencies:
-      convex: 1.9.0(@clerk/clerk-react@4.30.5)(react-dom@18.2.0)(react@18.2.0)
+      convex: 1.11.0
+    dev: false
+
+  /convex@1.11.0:
+    resolution: {integrity: sha512-YVQ064Nx/cBWN01AJBL6TuJRzZfpxT6GQA/ne23pevmXwDohy5Lup9dGGnUkKLwFMwjqD/Wv4oXcotyFirBbJg==}
+    engines: {node: '>=16.15.1', npm: '>=7.0.0'}
+    hasBin: true
+    peerDependencies:
+      '@auth0/auth0-react': ^2.0.1
+      '@clerk/clerk-react': ^4.12.8
+      react: ^17.0.2 || ^18.0.0
+      react-dom: ^17.0.2 || ^18.0.0
+    peerDependenciesMeta:
+      '@auth0/auth0-react':
+        optional: true
+      '@clerk/clerk-react':
+        optional: true
+      react:
+        optional: true
+      react-dom:
+        optional: true
+    dependencies:
+      esbuild: 0.17.19
+      jwt-decode: 3.1.2
+      node-fetch: 2.7.0
+      prettier: 3.2.5
+    transitivePeerDependencies:
+      - encoding
     dev: false
 
   /convex@1.9.0(@clerk/clerk-react@4.30.5)(react-dom@18.2.0)(react@18.2.0):
@@ -3604,7 +3634,6 @@ packages:
     resolution: {integrity: sha512-3/GWa9aOC0YeD7LUfvOG2NiDyhOWRvt1k+rcKhOuYnMY24iiCphgneUfJDyFXd6rZCAnuLBv6UeAULtrhT/F4A==}
     engines: {node: '>=14'}
     hasBin: true
-    dev: true
 
   /prop-types@15.8.1:
     resolution: {integrity: sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==}
